@@ -8,3 +8,5 @@ The Plugin is used for registration of projects and tasks. One main project has 
 ## Install
 
 ## Test
+
+## Features
