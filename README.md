@@ -1,20 +1,35 @@
 # Redmine project from task plugin
 
+## Overview
+
+This plugin automatically turns a task into a sub-project.
+
 ## About project
-The Plugin is used for registration of projects and tasks. One main project has been created to register sub - projects and tasks, which contains 3 sub - projects: ideas phase, project initiation phase, execution projects phase. At the project initiation phase, we register projects as tasks. Once the task in the initiation phase is approved, then a sub - project needs to be created in the execution projects phase. To avoid re-submitting information when registering a project, we need a plugin that would allow us to automatically make a sub-project in the execution projects phase from the task in the initiation phase when the task status is changed. 
+This plugin allows you to turn a task into a sub-project. When a task created in the project initiation phase is confirmed by changing the status, then the task is converted into a sub - project in the project execution phase.
 
 ## Compatibility
 Redmine x.x.x compatible
 
 ## Features List
+1. Task conversion into sub-project
 
 ## Plugin install
-1. Download latest release....
-2. Extract archive to <redmine>/plugins. Make sure the plugin directory is called
-3. ..
-4. ..
+Install project_from_task plugin for Redmine
+
+cd $REDMINE_ROOT
+git clone https://github.com/AlphaNodes/project_from_task.git plugins/project_from_task
+bundle install
+bundle exec rake redmine:plugins:migrate RAILS_ENV=production
+
+More information on installing Redmine plugins can be found here: http://www.redmine.org/wiki/redmine/Plugins
+
+After the plugin is installed and the db migration completed, you will need to restart Redmine for the plugin to be available.
 
 ## Uninstall
+Uninstall project_from_task
 
+cd $REDMINE_ROOT
+bundle exec rake redmine:plugins:migrate NAME=project_from_task VERSION=0 RAILS_ENV=production
+rm -rf plugins/project_from_task
 ## Test
 
